@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <link rel="stylesheet" href="wardrobe.css">
+    <title>
+        Weather Wardrobe
+    </title>
+</head>
+
+<body>
+<h1>Men' Guide to Wardrobe for All Weathers</h1>
+
+<div class="main">
+  <input type="text" id="zipcode" placeholder="City Name or Zipcode">
+  <button onclick="makeRequest()">Outfit!</button>
+  <div>
+    <div id="outfit"></div>
+    <div id="dress"></div>
+      <center><button id="refresh" onclick="pickOutfit();">Repick Please</button></center>  
+  </div>
+</div>
+<br><br>
+    
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="http://www.geoplugin.net/javascript.gp" type="text/javascript"></script>
+<script src="wardrobe.js"></script>
+</body>
+</html>
