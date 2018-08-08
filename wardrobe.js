@@ -197,8 +197,20 @@ function hello(event) {
   }
 }
 
+
+var currentAddress = false;
 getCurrentAddress();
+checkForCurrentAddress();
+
 function getCurrentAddress(){
   document.getElementById("zipcode").value = geoplugin_city() + " " + geoplugin_region();  
   makeRequest();  
+  currentAddress = true;  
+}
+
+function checkForCurrentAddress(){
+  if(currentAddress == false){
+    document.getElementById("zipcode").value = "Pasadena, California" ;   
+    makeRequest();  
+  }  
 }
