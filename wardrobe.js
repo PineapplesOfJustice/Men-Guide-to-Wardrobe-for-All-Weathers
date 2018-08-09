@@ -197,6 +197,7 @@ function hello(event) {
   }
 }
 
+/*
 
 var currentAddress = false;
 getCurrentAddress();
@@ -214,3 +215,5 @@ function checkForCurrentAddress(){
     makeRequest();  
   }  
 }
+
+*/
