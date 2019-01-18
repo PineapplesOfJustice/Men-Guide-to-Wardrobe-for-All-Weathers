@@ -165,18 +165,20 @@ function makeRequest() {
   if(Number(document.getElementById("zipcode").value) != 0){  
     var url = "https://api.apixu.com/v1/current.json?key=0ca8b464bb0e4433b9b200308182202&q=" + document.getElementById("zipcode").value;
     document.getElementById("zipcode").value = "";
-    console.log(url);  
-    setTimeout(ifNotUpdated, 1000);  
+    //console.log(url);    
     $.ajax({
       url: url,
       success: function(data) {
         wardSuggester(data);
+      },
+      error: function (){
+        inputFailure();
       }
     })
   }
 }
 
-function ifNotUpdated(){
+function inputFailure(){
   if(dataUpdated == false){ 
     document.getElementById("zipcode").setAttribute("placeholder", "Location not Found");
     document.getElementById("refresh").setAttribute("style", "display: none;");
