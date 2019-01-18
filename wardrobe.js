@@ -70,15 +70,13 @@ var windMiss = ["Helicopter Hat.jpg",
 var temperature = "";
 var weather = "";
 var wind = false;
-var dataUpdated = false;
 
 var shirt = "";
 var pant = "";
 var shoe = "";
 var accesory = "";
 
-function wardSuggester(data){
-  dataUpdated = true;  
+function wardSuggester(data){  
   document.getElementById("zipcode").setAttribute("placeholder", "City Name or Zipcode");
   document.getElementById("refresh").setAttribute("style", "display: block;");
   document.getElementById("outfit").innerHTML = "<br><span id='green'>City: </span>" + data.location.name + "<br>";
@@ -173,23 +171,20 @@ function makeRequest() {
       },
       error: function (){
         inputFailure();
-      }
+      },
     })
   }
 }
 
 function inputFailure(){
-  if(dataUpdated == false){ 
-    document.getElementById("zipcode").setAttribute("placeholder", "Location not Found");
-    document.getElementById("refresh").setAttribute("style", "display: none;");
-    document.getElementById("outfit").innerHTML = "";
-    document.getElementById("dress").innerHTML = ""; 
-    temperature = "";
-    weather = "";
-    wind = false;
-    pickBackground();  
-  }  
-  else{ dataUpdated = false; }   
+  document.getElementById("zipcode").setAttribute("placeholder", "Location not Found");
+  document.getElementById("refresh").setAttribute("style", "display: none;");
+  document.getElementById("outfit").innerHTML = "";
+  document.getElementById("dress").innerHTML = ""; 
+  temperature = "";
+  weather = "";
+  wind = false;
+  pickBackground();  
 }
 
 document.addEventListener('keypress',hello)
